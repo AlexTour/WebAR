@@ -5,7 +5,8 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='debugUIEnabled: false; patternRatio: 0.5; sourceType: webcam;'>
       <a-marker preset="hiro">
-          <a-box position='0 0.5 0' material='color: red;'></a-box>
+          <!--<a-box position='0 0.5 0' material='color: red;'></a-box>-->
+          <a-entity obj-model="obj: url('/model/model.obj'); mtl: url('/model/materials.mtl')"></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
