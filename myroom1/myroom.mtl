@@ -13,13 +13,13 @@ illum 2
 
 newmtl Material.002
 Ns 136.111116
-Ka 0.305556 0.305556 0.305556
+Ka 1.000000 1.000000 1.000000
 Kd 0.736005 0.913857 1.000000
-Ks 0.361111 0.361111 0.361111
+Ks 0.000000 0.000000 0.000000
 Ke 0.0 0.0 0.0
 Ni 1.450000
 d 1.000000
-illum 3
+illum 1
 map_Kd 194187_download-wallpapers-2560x1440-texture-red-carpet-rug-backgrounds_2560x1440_h.jpg
 
 newmtl mat12
