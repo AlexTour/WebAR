@@ -7,12 +7,14 @@
       <!--<a-entity id="point_light_1" light="type: point; intensity: 1.1;" position="0 0 0" rotation="0 0 0"></a-entity>-->
       <a-marker preset="hiro" smooth="true">
           <!--<a-box position='0 0.5 0' material='color: red;'></a-box>-->
-		  <a-image src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
+		  <a-image src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1.2 1.2 1.2" visible="" material="" geometry=""></a-image>
           <a-entity
-               position="0 0 0"
+               position="0 0.25 0"
                scale="0.3 0.3 0.3"
                rotation="60 0 0"
                obj-model="obj: url(model/HireMe.obj); mtl: url(model/HireMe.mtl)">
+			   <a-animation attribute="rotation" from="20 0 0" to="20 360 0" direction="alternate" dur="4000" repeat="indefinite" easing="ease">
+               </a-animation>
 	      </a-entity>
       </a-marker>
       <a-entity camera></a-entity>
