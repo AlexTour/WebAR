@@ -54,7 +54,7 @@
                     cube.setAttribute('material', 'color', "red");
                 });
                 cube.addEventListener("mouseup", function (evt) {
-                    cube.setAttribute('material', 'color', "blue");
+                    cube.setAttribute('material', 'color', "green");
                 });
             }
         });
@@ -65,7 +65,7 @@
 
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='debugUIEnabled: true; trackingMethod: best; patternRatio: 0.9; sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; startButton'>
+    <a-scene embedded arjs='debugUIEnabled: true; trackingMethod: best; patternRatio: 0.9; sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;' startButton>
         <!--<a-entity id="point_light_1" light="type: point; intensity: 1.1;" position="0 0 0" rotation="0 0 0"></a-entity>-->
 
         <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='custom' type='pattern' url='marker/pattern-at.patt' smooth="true" registerevents>
