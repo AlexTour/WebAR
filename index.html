@@ -60,12 +60,17 @@
         <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='custom' type='pattern' url='marker/pattern-at.patt' smooth="true" registerevents>
             <!--<a-box position='0 0.5 0' material='color: red;'></a-box>-->
             <a-image src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1.2 1.2 1.2" visible="" material="" geometry=""></a-image>
-            <a-entity id="animated-model"
+            <a-entity 
                       position="0 0.1 0.1"
                       scale="0.3 0.3 0.3"
                       rotation="0 0 0"
                       obj-model="obj: url(model/HireMe.obj); mtl: url(model/HireMe.mtl)">
             </a-entity>
+            <a-box id="animated-model" position='0 0.5 0' material='opacity: 0.5; side: double;color:blue;'>
+                <a-torus-knot radius='0.26' radius-tubular='0.05'
+                              animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
+                </a-torus-knot>
+            </a-box>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
