@@ -54,19 +54,21 @@
 
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='debugUIEnabled: false; trackingMethod: best; patternRatio: 0.9; sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;'>
+    <a-scene embedded arjs='debugUIEnabled: true; trackingMethod: best; patternRatio: 0.9; sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;'>
         <!--<a-entity id="point_light_1" light="type: point; intensity: 1.1;" position="0 0 0" rotation="0 0 0"></a-entity>-->
 
         <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='custom' type='pattern' url='marker/pattern-at.patt' smooth="true" registerevents>
             <!--<a-box position='0 0.5 0' material='color: red;'></a-box>-->
             <!--<a-entity cursor="fuse: false" position="0 0 -1" geometry="primitive:ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat">
                 </a-entity>-->
+
                 <!--<a-image src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1.2 1.2 1.2" visible="" material="" geometry=""></a-image>
                 <a-entity position="0 0.1 0.1"
                           scale="0.3 0.3 0.3"
                           rotation="0 0 0"
                           obj-model="obj: url(model/HireMe.obj); mtl: url(model/HireMe.mtl)">
                 </a-entity>-->
+
                 <a-box id="animated-model" position='0 0.5 0' material='opacity: 0.5; side: double;color:blue;'>
                     <a-torus-knot radius='0.26' radius-tubular='0.05'
                                   animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
