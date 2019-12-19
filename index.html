@@ -73,7 +73,7 @@
 
         <a-marker-camera markerhandler emitevents="true" raycaster="objects:.data-raycastable" far:0.5; cursor="rayOrigin: mouse" preset='custom' type='pattern' url='marker/pattern-at.patt' smooth="true" registerevents startButton>
             <!--<a-box position='0 0.5 0' material='color: red;'></a-box>-->           
-            <a-box class="data-raycastable" position="0 0.5 2" rotation="0 45 0" color="yellow" animation="property: position; from: 0 0.5 2; to: 0 0.5 -10; dur: 2000; fill: both"</a-box>
+            <a-box class="data-raycastable" position="0 0.5 2" rotation="0 45 0" color="yellow" animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true"</a-box>
 
             <a-image id="animated-model" class="data-raycastable" src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
             <a-entity position="0 0.1 0.1"
