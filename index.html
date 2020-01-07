@@ -5,7 +5,9 @@
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.5/aframe/build/aframe-ar.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+
+	<!-- import events.js script -->
+    <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
 
     <!-- Register an aframe component that allows reacting to marker events -->
     <script>
@@ -30,37 +32,6 @@
                 });
             }
         });
-        AFRAME.registerComponent('markerhandler', {
-
-            init: function () {
-                const animatedMarker = document.querySelector("#animated-marker");
-                const aEntity = document.querySelector("#animated-model");
-
-                // every click, we make our model grow in size :)
-                animatedMarker.addEventListener('click', function (ev, target) {
-                    const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-                    if (aEntity && intersectedElement === aEntity) {
-                        const scale = aEntity.getAttribute('scale');
-                        Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
-                        aEntity.setAttribute('scale', scale);
-                        console.log('Clicked Successfully');
-                    }
-                });
-            }
-        });
-        AFRAME.registerComponent('startButton', {
-            init: function () {
-                var cube = document.querySelector("#animated-model");
-                cube.addEventListener("mousedown", function (evt) {
-                    cube.setAttribute('material', 'color', "red");
-                    console.log('Change color to red');
-                });
-                cube.addEventListener("mouseup", function (evt) {
-                    cube.setAttribute('material', 'color', "green");
-                    console.log('Change color to green');
-                });
-            }
-        });
     </script>
 </head>
 
@@ -71,22 +42,19 @@
     <a-scene artoolkit embedded arjs='debugUIEnabled: false; trackingMethod: best; patternRatio: 0.9; sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;'>
         <!--<a-entity id="point_light_1" light="type: point; intensity: 1.1;" position="0 0 0" rotation="0 0 0"></a-entity>-->
 
-        <a-marker-camera markerhandler emitevents="true" raycaster="objects:.data-raycastable" far:0.5; cursor="rayOrigin: mouse" preset='custom' type='pattern' url='marker/pattern-at.patt' smooth="true" registerevents startButton>
-            <!--<a-box position='0 0.5 0' material='color: red;'></a-box>-->           
-            <a-box class="data-raycastable" position="0 0.5 2" rotation="0 45 0" color="yellow"></a-box>
-
+        <a-marker-camera id="animated-marker" markerhandler emitevents="true" cursor="rayOrigin: mouse" preset='custom' type='pattern' url='marker/pattern-at.patt' smooth="true" registerevents>
             <a-image id="animated-model" src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
-            <a-entity position="0 0.1 0.1"
+            <a-entity position="0 1 0.1"
                       scale="0.3 0.3 0.3"
-                      rotation="0 0 0"
+                      rotation="0 45 0"
                       obj-model="obj: url(model/HireMe.obj); mtl: url(model/HireMe.mtl)">
             </a-entity>
 
-            <a-box id="animated-marker" position='0 0.5 -1' material='opacity: 0.5; side: double;color:blue;'>
+            <!--<a-box position='0 0.5 -1' material='opacity: 0.5; side: double;color:blue;'>
                 <a-torus-knot radius='0.26' radius-tubular='0.05'
                               animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
                 </a-torus-knot>
-            </a-box>
+            </a-box>-->
         </a-marker-camera>
     </a-scene>
 </body>
