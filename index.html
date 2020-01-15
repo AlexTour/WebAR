@@ -44,13 +44,13 @@
 
         <a-marker-camera id="animated-marker" markerhandler emitevents="true" cursor="rayOrigin: mouse" preset='custom' type='pattern' url='marker/pattern-at.patt' smooth="true" registerevents>
             <a-image id="animated-model" src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
-            <a-entity position="0 0.3 0.1"
+            <a-entity position="0 0.3 0.5"
                       scale="0.3 0.3 0.3"
                       rotation="45 0 0"
                       obj-model="obj: url(model/HireMe.obj); mtl: url(model/HireMe.mtl)">
             </a-entity>
-            <a-entity position="0 0 0"
-                      scale="0.2 0.2 0.2"
+            <a-entity position="0 0.3 0"
+                      scale="0.1 0.1 0.1"
                       rotation="0 0 0"
                       animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true"
                       obj-model="obj: url(polyfold/polyfold.obj); mtl: url(polyfold/polyfold.mtl)">
