@@ -44,25 +44,26 @@
         <a-entity id="point_light_2" light="type: point; intensity: 0.5;" position="-1 2 0" rotation="-30 70 0"></a-entity>
 
         <a-marker-camera id="animated-marker" markerhandler emitevents="true" cursor="rayOrigin: mouse" preset='custom' type='pattern' url='marker/pattern-at.patt' smooth="true" registerevents>
-            <a-image id="animated-model" src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="1" height="1" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
-            <a-entity position="0 0.7 0.52"
-                      scale="0.25 0.25 0.25"
-                      rotation="90 0 0"
-                      obj-model="obj: url(model/HireMe.obj);">
-                <!--mtl: url(model/HireMe.mtl);-->
+             <a-image id="animated-model" src="programmer.jpg" position="0 0 0" rotation="-90 0 0" width="1" height="1" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
+             <a-entity position="0 0.7 0.52"
+                       scale="0.25 0.25 0.25"
+                       rotation="90 0 0"
+                       obj-model="obj: url(model/HireMe.obj);">
+                 <!--mtl: url(model/HireMe.mtl);-->
             </a-entity>
-            <a-entity position="0 0.5 0"
+            <a-entity gltf-model="url(truck/truck.glb)" 
+                      position="0 0.5 0"
                       scale="0.12 0.12 0.12"
                       rotation="0 0 0"
                       animation="property: rotation; from:0 0 0; to:0 360 0; dur: 4000; easing: linear; loop: true"
-                      obj-model="obj: url(polyfold/polyfold.obj); mtl: url(polyfold/polyfold.mtl);">                
+                      >
             </a-entity>
 
             <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:white;'>
-            <!--<a-torus-knot radius='0.26' radius-tubular='0.05'
-                          animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
-            </a-torus-knot>-->
-        </a-box>
+                <!--<a-torus-knot radius='0.26' radius-tubular='0.05'
+                      animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
+        </a-torus-knot>-->
+            </a-box>                                     
         </a-marker-camera>
     </a-scene>
 </body>
